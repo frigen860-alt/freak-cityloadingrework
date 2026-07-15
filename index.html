@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Freak-City — Загрузка</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="background" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <main class="screen">
+    <section class="player" aria-label="Музыкальный плеер">
+      <div class="player__top">
+        <div>
+          <div class="player__eyebrow">СЕЙЧАС ИГРАЕТ</div>
+          <div class="player__title" id="trackTitle">Музыка сервера</div>
+          <div class="player__artist">Freak-City</div>
+        </div>
+        <div class="player__note">♫</div>
+      </div>
+
+      <input class="player__seek" id="seek" type="range" min="0" max="100" value="0" aria-label="Позиция трека">
+
+      <div class="player__time">
+        <span id="currentTime">00:00</span>
+        <span id="duration">00:00</span>
+      </div>
+
+      <div class="player__controls">
+        <button class="icon-button" id="muteButton" type="button" aria-label="Выключить звук">🔊</button>
+        <button class="play-button" id="playButton" type="button" aria-label="Воспроизвести">▶</button>
+        <label class="volume-wrap">
+          <span>Громкость</span>
+          <input id="volume" type="range" min="0" max="1" step="0.01" value="0.65" aria-label="Громкость">
+        </label>
+      </div>
+
+      <audio id="audio" preload="metadata" loop>
+        <source src="music/music.mp3" type="audio/mpeg">
+      </audio>
+    </section>
+
+    <section class="hero" aria-label="Логотип Freak-City">
+      <img class="logo" src="assets/logo.png" alt="Freak-City">
+    </section>
+
+    <section class="loading-panel" aria-live="polite">
+      <h1>ЗАГРУЗКА СЕРВЕРА</h1>
+      <p class="status" id="statusText">Подключение к Freak-City...</p>
+
+      <div class="download-row">
+        <span class="download-file">
+          <strong>СКАЧИВАЕТСЯ:</strong>
+          <span id="fileText">Подготовка файлов сервера...</span>
+        </span>
+        <span class="percent" id="percentText">0%</span>
+      </div>
+
+      <div class="progress" role="progressbar" aria-label="Прогресс загрузки" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="progress__fill" id="progressFill"></div>
+        <div class="progress__shine" aria-hidden="true"></div>
+      </div>
+
+      <div class="loading-footer">
+        <span id="filesText">Ожидание данных от Garry's Mod</span>
+        <span>Freak-City</span>
+      </div>
+    </section>
+
+    <div class="tip" id="tipText">
+      <span class="tip__icon">💡</span>
+      <strong>СОВЕТ:</strong>
+      <span>Не забывайте читать правила сервера и уважать других игроков.</span>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
