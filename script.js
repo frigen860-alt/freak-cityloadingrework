@@ -39,7 +39,7 @@
     statusText.textContent = `Подключение к ${serverName || "Freak-City"}...`;
 
     if (typeof volume !== "undefined") {
-      const normalizedVolume = clamp(Number(volume) || 0.65, 0, 1);
+      const normalizedVolume = clamp(Number(volume) || 0.15, 0, 1);
       audio.volume = normalizedVolume;
       volumeSlider.value = String(normalizedVolume);
     }
