@@ -247,6 +247,7 @@ body {
     height: 100%;
     border-radius: 999px;
     background: linear-gradient(90deg, #8d111c, #d92d3a 58%, #ef5160);
+    transition: width 0.35s ease-out;
 }
 
 #bar-shine {
@@ -320,6 +321,128 @@ body {
 
     #tip {
         bottom: 12px;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    #logo {
+        width: 68%;
+        max-width: 900px;
+    }
+
+    #loading {
+        width: 820px;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    #player {
+        width: 330px;
+    }
+
+    #logo {
+        top: 40%;
+        width: 64%;
+        max-width: 760px;
+    }
+
+    #loading {
+        width: 760px;
+        max-width: 84%;
+    }
+
+    #loading h1 {
+        font-size: 32px;
+    }
+
+    #tip {
+        max-width: 84%;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    #player {
+        transform: scale(0.82);
+        transform-origin: top left;
+    }
+
+    #logo {
+        top: 38%;
+        width: 60%;
+        max-width: 650px;
+    }
+
+    #loading {
+        bottom: 64px;
+        width: 700px;
+        max-width: 82%;
+    }
+
+    #loading h1 {
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #player {
+        top: 12px;
+        left: 12px;
+        transform: scale(0.74);
+        transform-origin: top left;
+    }
+
+    #logo {
+        top: 36%;
+        width: 72%;
+        max-width: 620px;
+    }
+
+    #loading {
+        bottom: 58px;
+        max-width: 88%;
+        padding: 14px 16px 12px 16px;
+    }
+
+    #loading h1 {
+        font-size: 24px;
+    }
+
+    #status {
+        font-size: 12px;
+    }
+
+    #tip {
+        bottom: 10px;
+        font-size: 11px;
+        max-width: 88%;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1500px) and (min-height: 900px) {
+    /* 1440x1080 and similar 4:3 / 5:4 resolutions */
+    #player {
+        top: 24px;
+        left: 26px;
+        transform: scale(0.92);
+        transform-origin: top left;
+    }
+
+    #logo {
+        top: 39%;
+        width: 66%;
+        max-width: 820px;
+        max-height: 40%;
+    }
+
+    #loading {
+        bottom: 86px;
+        width: 780px;
+        max-width: 82%;
+    }
+
+    #tip {
+        bottom: 24px;
+        max-width: 82%;
     }
 }
 </style>
