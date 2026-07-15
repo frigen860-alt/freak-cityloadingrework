@@ -354,9 +354,9 @@ body {
         </div>
     </div>
 
-    <audio id="audio" preload="metadata" loop>
-        <source src="music/music.mp3" type="audio/mpeg">
-    </audio>
+ <audio id="audio" preload="auto" loop autoplay>
+    <source src="music/music.mp3" type="audio/mpeg">
+</audio>
 </div>
 
 <div id="logo-wrap">
@@ -462,8 +462,6 @@ body {
         "Не забывайте читать правила сервера и уважать других игроков.",
         "Не отключайтесь во время загрузки файлов сервера.",
         "Сообщайте администрации о найденных ошибках.",
-        "Не мешайте другим игрокам получать удовольствие от игры.",
-        "Используйте голосовой чат без криков и музыки."
     ];
 
     var tipIndex = 0;
@@ -482,6 +480,24 @@ body {
     var duration = document.getElementById("duration");
 
     audio.volume = 0.25;
+
+    function startMusic() {
+    var promise = audio.play();
+
+    if (promise && promise.catch) {
+        promise.catch(function() {
+            // Браузер заблокировал автоматический запуск.
+        });
+    }
+}
+
+startMusic();
+
+document.onclick = function() {
+    if (audio.paused) {
+        startMusic();
+    }
+};
 
     function formatTime(seconds) {
         if (!isFinite(seconds)) return "00:00";
